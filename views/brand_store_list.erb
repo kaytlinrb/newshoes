@@ -1,0 +1,19 @@
+<h1 class="jumbotron"> <%= @brand.name() %></h1>
+<h3>This Brand is Sold At:</h3>
+<% @brand.stores.each do |store| %>
+<a href="/store/<%= store.id %>"><h5><%= store.name %></h5></a>
+<% end %>
+<br>
+
+<h5>Add aditional stores:</h5>
+<form action="/brand/<%= @brand.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <% @stores.each() do |store| %>
+  <input type="checkbox" name="store_ids[]" value="<%= store.id() %>"><%= store.name() %>
+  <% end %>
+  <button type="submit" class="btn" name="button">Submit</button>
+</form>
+<br>
+
+
+<a href="/"><button  class='btn' name="button">Back to Stores</button></a>

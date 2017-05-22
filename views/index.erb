@@ -1,0 +1,16 @@
+<h1 class="jumbotron">Store Locations</h1>
+
+<% if  @stores.any?()%>
+  <%  @stores.each() do |store|%>
+
+  <a href="/store/<%= store.id() %>"><h3> <%= store.name() %> </h3></a>
+
+  <% end  %>
+  <% else %>
+  <h4>Add a Store</h4>
+  <% end  %>
+<br>
+  <a href="/store/new"><button class="btn" type="button">Add New Store</button></a>
+<br>
+<br>
+  <a href="stores/brands"><button class="btn" type="button">Brand List</button></a>

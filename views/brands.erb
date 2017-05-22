@@ -1,0 +1,14 @@
+<h1 class='jumbotron'>All Recorded Brands</h1>
+
+<% if @brands.any? %>
+<% @brands.each() do |brand| %>
+<a href="/brand/<%= brand.id() %>/stores"><h3> <%= brand.name%></h3></a>
+<% end %>
+<% else %>
+<h2>There are no shoes saved yet</h2>
+<% end %>
+<br>
+
+
+
+<a href="/"><button  class='btn' name="button">Back to Stores</button></a>
